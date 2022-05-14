@@ -5,7 +5,6 @@
 @include('layouts.navbar')
 
 <!-- Sidebar -->
-@include('layouts.sidebar')
 
 <!-- Content -->
 @yield('content')

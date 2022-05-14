@@ -7,7 +7,7 @@
                     <div class="hero__categories">
                         <div class="hero__categories__all">
                             <i class="fa fa-bars"></i>
-                            <span>Shop</span>
+                            <span>Paket Obat</span>
                         </div>
                         <ul>
                             <li><a href="#">Batuk & Flu</a></li>
@@ -24,7 +24,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="col-lg-9">
+                <!-- <div class="col-lg-9">
                     <div class="hero__search">
                         <div class="hero__search__form">
                             <form action="#">
@@ -46,7 +46,7 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

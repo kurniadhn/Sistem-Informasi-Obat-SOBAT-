@@ -31,8 +31,33 @@ class HomeController extends Controller
         return view('dashboard');
     }
 
-    public function blog()
+    public function obat()
     {
-        return view('blog');
+        return view('obat');
+    }
+
+    public function artikel()
+    {
+        return view('artikel');
+    }
+
+    public function keranjang()
+    {
+        return view('keranjang');
+    }
+
+    public function detail_artikel()
+    {
+        return view('detail_artikel');
+    }
+
+    public function detail_obat()
+    {
+        return view('detail_obat');
+    }
+
+    public function checkout()
+    {
+        return view('checkout');
     }
 }

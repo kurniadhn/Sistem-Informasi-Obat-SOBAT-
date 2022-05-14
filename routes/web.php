@@ -14,12 +14,16 @@ use Illuminate\Support\Facades\Route;
 */
 Route::get('/login', [App\Http\Controllers\LoginController::class, 'index'])->name('login');
 Route::post('/logout', [App\Http\Controllers\LoginController::class, 'logout']);
-Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'dashboard']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
-Route::get('/blog', [App\Http\Controllers\HomeController::class, 'blog'])->name('blog');
+Route::get('/obat', [App\Http\Controllers\HomeController::class, 'obat'])->name('obat');
+Route::get('/artikel', [App\Http\Controllers\HomeController::class, 'artikel'])->name('artikel');
+Route::get('/detail_artikel/', [App\Http\Controllers\HomeController::class, 'detail_artikel'])->name('detail_artikel');
+Route::get('/detail_obat/', [App\Http\Controllers\HomeController::class, 'detail_obat'])->name('detail_obat');
+Route::get('/keranjang', [App\Http\Controllers\HomeController::class, 'keranjang'])->name('keranjang');
+Route::get('/checkout', [App\Http\Controllers\HomeController::class, 'checkout'])->name('checkout');
 Auth::routes();
 
 Route::get('/clear-cache', function() {

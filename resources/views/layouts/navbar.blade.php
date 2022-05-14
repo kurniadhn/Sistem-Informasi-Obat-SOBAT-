@@ -33,7 +33,7 @@
         <nav class="humberger__menu__nav mobile-menu">
             <ul>
                 <li class="active"><a href="{{ asset('frontend/index.html') }}">Home</a></li>
-                <li><a href="{{ asset('frontend/shop-grid.html') }}">Shop</a></li>
+                <li><a href="{{ asset('frontend/shop-grid.html') }}">Paket Obat</a></li>
                 <li><a href="#">Pages</a>
                     <ul class="header__menu__dropdown">
                         <li><a href="{{ asset('frontend/shop-details.html') }}">Shop Details</a></li>
@@ -55,7 +55,7 @@
         </div>
         <div class="humberger__menu__contact">
             <ul>
-                <li><i class="fa fa-envelope"></i> hello@colorlib.com</li>
+                <li><i class="fa fa-envelope    "></i> hello@colorlib.com</li>
                 <li>Free Shipping for all Order of $99</li>
             </ul>
         </div>
@@ -134,8 +134,8 @@
                 <div class="col-lg-6">
                     <nav class="header__menu">
                         <ul>
-                            <li class="active"><a href="{{ asset('frontend/index.html') }}">Home</a></li>
-                            <li><a href="{{ asset('frontend/shop-grid.html') }}">Shop</a></li>
+                            <li class="{{ Route::is('dashboard') ? 'active' : '' }}"><a href="{{ '/' }}">Beranda</a></li>
+                            <li class="{{ Route::is('obat') ? 'active' : '' }}"><a href="{{ '/obat' }}">Obat</a></li>
                             <!-- <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
                                     <li><a href="{{ asset('frontend/shop-details.html') }}">Shop Details</a></li>
@@ -144,8 +144,7 @@
                                     <li><a href="{{ asset('frontend/blog-details.html') }}">Blog Details</a></li>
                                 </ul>
                             </li> -->
-                            <li><a href="{{ '/blog' }}">Artikel</a></li>
-                            <!-- <li><a href="{{ asset('frontend/contact.html') }}">Contact</a></li> -->
+                            <li class="{{ Route::is('artikel') ? 'active' : '' }}"><a href="{{ '/artikel' }}">Artikel</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -153,7 +152,7 @@
                     <div class="header__cart">
                         <ul>
                             <!-- <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li> -->
-                            <li><a href="#"><i class="fa fa-shopping-bag"></i><span>3</span></a></li>
+                            <li><a href="{{ '/keranjang' }}"><i class="fa fa-shopping-bag"></i><span>3</span></a></li>
                         </ul>
                         <!-- <div class="header__cart__price">item: <span>$150.00</span></div> -->
                     </div>
