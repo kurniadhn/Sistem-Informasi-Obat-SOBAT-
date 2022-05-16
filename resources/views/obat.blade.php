@@ -30,7 +30,7 @@
                             <ul>
                                 @foreach($jenis_obats as $jenis_obat)
                                     <li>
-                                        <a href="{{ '/obat?jenis_obat=' . $jenis_obat->id_jenis }}">{{ $jenis_obat->jenis_obat }}</a>
+                                        <a href="javascript:void(0)">{{ $jenis_obat->jenis_obat }}</a>
                                     </li>
                                 @endforeach
                             </ul>
