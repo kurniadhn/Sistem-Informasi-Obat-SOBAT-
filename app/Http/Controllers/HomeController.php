@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -28,17 +29,43 @@ class HomeController extends Controller
 
     public function dashboard()
     {
-        return view('dashboard');
+        $obats = DB::table('obat')
+                // >orderBy('tgl_pelaksanaan', 'desc')
+                ->inRandomOrder()
+                ->where('id_jenis', '6')
+                ->paginate(12);
+                //dd($obats[0]->gambar);die;
+
+        //$jenis_obats = DB::table('jenis_obat')->get();
+                                                                                                                     
+        $artikels = DB::table('artikel')
+                //->orderBy('tanggal', 'desc')
+                ->inRandomOrder()
+                ->paginate(3);
+
+      return view('dashboard', compact('obats', 'artikels'));
     }
 
     public function obat()
     {
-        return view('obat');
+        $obats = DB::table('obat')
+                // >orderBy('tgl_pelaksanaan', 'desc')
+                ->inRandomOrder()
+                ->where('id_jenis', '6')
+                ->paginate(12);
+                //dd($obats[0]->gambar);die;
+
+        return view('obat', compact('obats'));
     }
 
     public function artikel()
-    {
-        return view('artikel');
+    {                                                                                                 
+        $artikels = DB::table('artikel')
+                //->orderBy('tanggal', 'desc')
+                ->inRandomOrder();
+                //->paginate(3);
+
+        return view('artikel', compact('artikels'));
     }
 
     public function keranjang()

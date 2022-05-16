@@ -5,7 +5,7 @@
     <section class="hero">
         <div class="container">
             <div class="row">
-                <div class="col-lg-3">
+                <!-- <div class="col-lg-3">
                     <div class="hero__categories">
                         <div class="hero__categories__all">
                             <i class="fa fa-bars"></i>
@@ -20,8 +20,8 @@
                             <li><a href="#">Saluran Pencernaan</a></li>
                         </ul>
                     </div>
-                </div>
-                <div class="col-lg-9">
+                </div> -->
+                <div class="col-lg-12">
                     <div class="hero__item set-bg" data-setbg="{{ asset('frontend/img/hero/banner.jpg') }}">
                         <div class="hero__text">
                             <span>SOBAT</span>
@@ -85,22 +85,14 @@
                     <div class="section-title">
                         <h2>Daftar Obat</h2>
                     </div>
-                    <div class="featured__controls">
-                        <ul>
-                            <li class="active" data-filter="*">All</li>
-                            <li data-filter=".oranges">Batuk & Flu</li>
-                            <li data-filter=".fresh-meat">P3K</li>
-                            <li data-filter=".vegetables">Pencernaan</li>
-                            <li data-filter=".fastfood"></li>
-                        </ul>
-                    </div>
                 </div>
             </div>
             <div class="row featured__filter">
-			    @for ($i = 1; $i <= 12; $i++)
+			    @foreach ($obats as $obat)
+                <?php $gambar = str_replace(' ', '%20', $obat->gambar); ?>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="{{ asset('frontend/img/featured/feature-1.jpg') }}">
+                        <div class="featured__item__pic set-bg" data-setbg="{{ asset('img/obat/' . $gambar) }}">
                             <ul class="featured__item__pic__hover">
                                 <!-- <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li> -->
@@ -108,12 +100,12 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">Nama Obat</a></h6>
-                            <h5>Rp100,-</h5>
+                            <h6><a href="#">{{ $obat->nama_obat }}</a></h6>
+                            <h5>Rp {{ $obat->harga }}</h5>
                         </div>
                     </div>
                 </div>
-                @endfor
+                @endforeach
             </div>
         </div>
     </section>
@@ -130,23 +122,23 @@
                 </div>
             </div>
             <div class="row">
-			    @for ($i = 1; $i <= 6; $i++)
+			    @foreach ($artikels as $artikel)
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
-                            <img src="{{ asset('frontend/img/blog/blog-1.jpg') }}" alt="">
+                            <img src="{{ asset('img/artikel/' . $artikel->gambar) }}" alt="">
                         </div>
                         <div class="blog__item__text">
                             <ul>
-                                <li><i class="fa fa-calendar-o"></i> May 4,2019</li>
+                                <li><i class="fa fa-calendar-o"></i> {{ $artikel->tanggal }}</li>
                                 <!-- <li><i class="fa fa-comment-o"></i> 5</li> -->
                             </ul>
-                            <h5><a href="#">Judul Artikel</a></h5>
-                            <p>Sed quia non numquam modi tempora indunt ut labore et dolore magnam aliquam quaerat </p>
+                            <h5><a href="{{ $artikel->link }}"  target="__blank">{{ $artikel->judul_artikel }}</a></h5>
+                            <p>{{ $artikel->deskripsi }}</p>
                         </div>
                     </div>
                 </div>
-                @endfor
+                @endforeach
             </div>
         </div>
     </section>

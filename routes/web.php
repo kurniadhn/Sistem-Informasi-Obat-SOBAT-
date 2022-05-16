@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/login', [App\Http\Controllers\LoginController::class, 'index'])->name('login');
-Route::post('/logout', [App\Http\Controllers\LoginController::class, 'logout']);
+Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout'])->name('logout');
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'dashboard']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

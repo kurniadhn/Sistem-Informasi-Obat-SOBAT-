@@ -69,21 +69,22 @@
                         </div>
                     </div>
                     <div class="row">
-                        @for ($i = 1; $i <= 12; $i++)
+                        @foreach ($obats as $obat)
+                        <?php $gambar = str_replace(' ', '%20', $obat->gambar); ?>
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="{{ asset('frontend/img/product/product-1.jpg') }}">
+                                <div class="product__item__pic set-bg" data-setbg="{{ asset('img/obat/' . $gambar) }}">
                                     <ul class="product__item__pic__hover">
                                         <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="#">Crab Pool Security</a></h6>
-                                    <h5>$30.00</h5>
+                                    <h6><a href="#">{{ $obat->nama_obat }}</a></h6>
+                                    <h5>Rp {{ $obat->harga }}</h5>
                                 </div>
                             </div>
                         </div>
-                        @endfor
+                        @endforeach
                     </div>
                     <div class="product__pagination">
                         <a href="#">1</a>
