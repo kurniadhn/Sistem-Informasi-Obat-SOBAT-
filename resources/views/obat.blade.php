@@ -88,7 +88,7 @@
                     <div class="product__pagination">
                         <a href="javascript:void(0)"><i class="fa fa-long-arrow-left"></i></a>
                         @for ($i = 1; $i <=10; $i++)
-                            <a href="{{ '/obat?page= . $i' }}">{{ $i }}</a>
+                            <a href="{{ '/obat?page=' . $i }}">{{ $i }}</a>
                         @endfor
                         <a href="javascript:void(0)"><i class="fa fa-long-arrow-right"></i></a>
                         <!-- {{ $obats->links() }} -->

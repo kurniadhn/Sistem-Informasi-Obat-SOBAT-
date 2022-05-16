@@ -32,7 +32,6 @@ class HomeController extends Controller
     {
         $obats = DB::table('obat')
                 ->inRandomOrder()
-                ->where('id_jenis', '6')
                 ->paginate(12);
                                                                                                                      
         $artikels = DB::table('artikel')
