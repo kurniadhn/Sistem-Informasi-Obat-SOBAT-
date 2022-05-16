@@ -9,9 +9,9 @@
                             <a href="javascript:void(0)"><h2>Sobat</h2></a>
                         </div>
                         <ul>
-                            <li>Address: 60-49 Road 11378 New York</li>
-                            <li>Phone: +65 11.188.888</li>
-                            <li>Email: hello@colorlib.com</li>
+                            <li><b>Alamat</b> : Jl. Mastrip, Krajan Timur, Sumbersari, Kec. Sumbersari, Kabupaten Jember, Jawa Timur 68121</li>
+                            <li><b>Contact</b> : +62 851-5717-0015</li>
+                            <li><b>Email</b> : sobat@gmail.com</li>
                         </ul>
                     </div>
                 </div>
@@ -19,36 +19,28 @@
                     <div class="footer__widget">
                         <h6>Useful Links</h6>
                         <ul>
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">About Our Shop</a></li>
-                            <li><a href="#">Secure Shopping</a></li>
-                            <li><a href="#">Delivery infomation</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Our Sitemap</a></li>
+                            <li><a href="{{ '/dashboard' }}">Beranda</a></li>
+                            <li><a href="{{ '/obat' }}">Obat</a></li>
+                            <li><a href="{{ '/artikel' }}">Artikel</a></li>
                         </ul>
                         <ul>
-                            <li><a href="#">Who We Are</a></li>
-                            <li><a href="#">Our Services</a></li>
-                            <li><a href="#">Projects</a></li>
-                            <li><a href="#">Contact</a></li>
-                            <li><a href="#">Innovation</a></li>
-                            <li><a href="#">Testimonials</a></li>
+                            <!-- <li><a href="#">Who We Are</a></li> -->
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12">
                     <div class="footer__widget">
-                        <h6>Join Our Newsletter Now</h6>
-                        <p>Get E-mail updates about our latest shop and special offers.</p>
+                        <h6>Social Media</h6>
+                        <!-- <p>Get E-mail updates about our latest shop and special offers.</p>
                         <form action="#">
                             <input type="text" placeholder="Enter your mail">
                             <button type="submit" class="site-btn">Subscribe</button>
-                        </form>
+                        </form> -->
                         <div class="footer__widget__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-pinterest"></i></a>
+                            <a href="javascript:void(0)"><i class="fa fa-facebook"></i></a>
+                            <a href="javascript:void(0)"><i class="fa fa-instagram"></i></a>
+                            <!-- <a href="#"><i class="fa fa-twitter"></i></a> -->
+                            <a href="https://wa.me/+6285157170015" target="__blank"><i class="fa fa-whatsapp"></i></a>
                         </div>
                     </div>
                 </div>

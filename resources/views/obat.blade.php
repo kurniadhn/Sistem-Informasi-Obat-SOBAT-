@@ -28,12 +28,11 @@
                         <div class="sidebar__item">
                             <h4>Paket Obat</h4>
                             <ul>
-                                <li><a href="#">Antibiotik</a></li>
-                                <li><a href="#">Flu & Batuk</a></li>
-                                <li><a href="#">Mata</a></li>
-                                <li><a href="#">Minyak Angin & Balsam</a></li>
-                                <li><a href="#">P3K</a></li>
-                                <li><a href="#">Saluran Pencernaan</a></li>
+                                @foreach($jenis_obats as $jenis_obat)
+                                    <li>
+                                        <a href="{{ '/obat?jenis_obat=' . $jenis_obat->id_jenis }}">{{ $jenis_obat->jenis_obat }}</a>
+                                    </li>
+                                @endforeach
                             </ul>
                         </div>
                     </div>
@@ -87,12 +86,12 @@
                         @endforeach
                     </div>
                     <div class="product__pagination">
-                        <a href="#">1</a>
-                        <a href="#">2</a>
-                        <a href="#">3</a>
-                        <a href="#">4</a>
-                        <a href="#">5</a>
-                        <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                        <a href="javascript:void(0)"><i class="fa fa-long-arrow-left"></i></a>
+                        @for ($i = 1; $i <=10; $i++)
+                            <a href="{{ '/obat?page= . $i' }}">{{ $i }}</a>
+                        @endfor
+                        <a href="javascript:void(0)"><i class="fa fa-long-arrow-right"></i></a>
+                        <!-- {{ $obats->links() }} -->
                     </div>
                 </div>
             </div>

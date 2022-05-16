@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use App\Models\Obat;
 
 class HomeController extends Controller
 {
@@ -30,16 +31,11 @@ class HomeController extends Controller
     public function dashboard()
     {
         $obats = DB::table('obat')
-                // >orderBy('tgl_pelaksanaan', 'desc')
                 ->inRandomOrder()
                 ->where('id_jenis', '6')
                 ->paginate(12);
-                //dd($obats[0]->gambar);die;
-
-        //$jenis_obats = DB::table('jenis_obat')->get();
                                                                                                                      
         $artikels = DB::table('artikel')
-                //->orderBy('tanggal', 'desc')
                 ->inRandomOrder()
                 ->paginate(3);
 
@@ -48,22 +44,18 @@ class HomeController extends Controller
 
     public function obat()
     {
-        $obats = DB::table('obat')
-                // >orderBy('tgl_pelaksanaan', 'desc')
-                ->inRandomOrder()
-                ->where('id_jenis', '6')
-                ->paginate(12);
-                //dd($obats[0]->gambar);die;
+        $jenis_obats = DB::table('jenis_obat')->get();
 
-        return view('obat', compact('obats'));
+        $obats = DB::table('obat')
+                ->orderBy('nama_obat', 'asc')
+                ->paginate(24);
+        
+        return view('obat', compact('obats', 'jenis_obats'));
     }
 
     public function artikel()
     {                                                                                                 
-        $artikels = DB::table('artikel')
-                //->orderBy('tanggal', 'desc')
-                ->inRandomOrder();
-                //->paginate(3);
+        $artikels = DB::table('artikel')->get();
 
         return view('artikel', compact('artikels'));
     }
