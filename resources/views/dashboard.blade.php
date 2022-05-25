@@ -89,7 +89,7 @@
             </div>
             <div class="row featured__filter">
 			    @foreach ($obats as $obat)
-                <?php $gambar = str_replace(' ', '%20', $obat->gambar); ?>
+                <?php $gambar = str_replace(' ', '%20', $obat->image); ?>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                     <div class="featured__item">
                         <div class="featured__item__pic set-bg" data-setbg="{{ asset('img/obat/' . $gambar) }}">
@@ -100,8 +100,8 @@
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">{{ $obat->nama_obat }}</a></h6>
-                            <h5>Rp {{ $obat->harga }}</h5>
+                            <h6><a href="#">{{ $obat->name }}</a></h6>
+                            <h5>Rp {{ $obat->price }}</h5>
                         </div>
                     </div>
                 </div>
@@ -126,15 +126,15 @@
                 <div class="col-lg-4 col-md-4 col-sm-6">
                     <div class="blog__item">
                         <div class="blog__item__pic">
-                            <img src="{{ asset('img/artikel/' . $artikel->gambar) }}" alt="">
+                            <img src="{{ asset('img/artikel/' . $artikel->image) }}" alt="">
                         </div>
                         <div class="blog__item__text">
                             <ul>
-                                <li><i class="fa fa-calendar-o"></i> {{ $artikel->tanggal }}</li>
+                                <li><i class="fa fa-calendar-o"></i> {{ $artikel->date }}</li>
                                 <!-- <li><i class="fa fa-comment-o"></i> 5</li> -->
                             </ul>
-                            <h5><a href="{{ $artikel->link }}"  target="__blank">{{ $artikel->judul_artikel }}</a></h5>
-                            <p>{{ $artikel->deskripsi }}</p>
+                            <h5><a href="{{ $artikel->url }}"  target="__blank">{{ $artikel->title }}</a></h5>
+                            <p>{{ $artikel->description }}</p>
                         </div>
                     </div>
                 </div>

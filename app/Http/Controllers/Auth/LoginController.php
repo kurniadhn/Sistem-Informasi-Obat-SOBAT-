@@ -40,13 +40,34 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    public function login(Request $request){
+        $this->validate($request, [
+            'email' => 'required|string',
+            'password' => 'required|string',
+        ]);
+
+        $loginType = filter_var($request->email, FILTER_VALIDATE_EMAIL) ? 'email' : 'email';
+
+        $login = [
+            $loginType => $request->email,
+            'password' => $request->password
+        ];
+
+        if (auth()->attempt($login)) {
+            if (Auth::user()->role == 'root') {
+                return redirect()->route('root.dashboard');
+            } elseif (Auth::user()->role == 'admin') {
+                return redirect()->route('admin.dashboard');
+            }
+        }
+
+        return redirect()->route('login')->with(['error' => 'Email/Password Yang Anda Masukkan Salah!']);
+    }
+
     public function logout(Request $request){
         Auth::logout();
-
         $request->session()->invalidate();
-
         $request->session()->regenerateToken();
-
         return redirect('/');
     }
 }

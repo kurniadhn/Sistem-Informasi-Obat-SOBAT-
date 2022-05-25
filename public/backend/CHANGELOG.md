@@ -1,22 +1,14 @@
 # Changelog
 
-## [1.1.2] 2020-02-04
-### Fixes
-- Fixed broken links
-- Added Upgrade to PRO Page
-- Readme updated
 
-## [1.1.1] 2019-12-20
-### Fixes
-- Fixed navbar classes
-- Fixed 'modal-' classes
-- Cleaned scss files
+## [1.0.0] 2018-12-11
+### Original Release
 
-## [1.1.0] 2019-07-01
-### Bootstrap Update, Libraries Update
+## [1.1.0] 2019-27-06
+### Boostrap Update, Libraries Update
 - Bootstrap updated to `4.3.1`
 - libraries updated to latest versions
-- fixed issues
+- fixed _icons.scss calc()
 
-## [1.0.0] 2018-09-26
-### Original Release
+## [1.1.1] 2019-05-08
+### Index Page Technologies Aligned

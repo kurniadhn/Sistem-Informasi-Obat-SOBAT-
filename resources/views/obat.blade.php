@@ -30,7 +30,7 @@
                             <ul>
                                 @foreach($jenis_obats as $jenis_obat)
                                     <li>
-                                        <a href="javascript:void(0)">{{ $jenis_obat->jenis_obat }}</a>
+                                        <a href="javascript:void(0)">{{ $jenis_obat->type }}</a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -69,7 +69,7 @@
                     </div>
                     <div class="row">
                         @foreach ($obats as $obat)
-                        <?php $gambar = str_replace(' ', '%20', $obat->gambar); ?>
+                        <?php $gambar = str_replace(' ', '%20', $obat->image); ?>
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="{{ asset('img/obat/' . $gambar) }}">
@@ -78,8 +78,8 @@
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="#">{{ $obat->nama_obat }}</a></h6>
-                                    <h5>Rp {{ $obat->harga }}</h5>
+                                    <h6><a href="#">{{ $obat->name }}</a></h6>
+                                    <h5>Rp {{ $obat->price }}</h5>
                                 </div>
                             </div>
                         </div>
@@ -90,8 +90,8 @@
                         @for ($i = 1; $i <=10; $i++)
                             <a href="{{ '/obat?page=' . $i }}">{{ $i }}</a>
                         @endfor
-                        <a href="javascript:void(0)"><i class="fa fa-long-arrow-right"></i></a>
                         <!-- {{ $obats->links() }} -->
+                        <a href="javascript:void(0)"><i class="fa fa-long-arrow-right"></i></a>
                     </div>
                 </div>
             </div>

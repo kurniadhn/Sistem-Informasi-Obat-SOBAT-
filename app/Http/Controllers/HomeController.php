@@ -13,11 +13,7 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
+    
     /**
      * Show the application dashboard.
      *
@@ -38,7 +34,9 @@ class HomeController extends Controller
                 ->inRandomOrder()
                 ->paginate(3);
 
-      return view('dashboard', compact('obats', 'artikels'));
+        $settings = DB::table('setting')->get();
+
+      return view('dashboard', compact('obats', 'artikels', 'settings'));
     }
 
     public function obat()
@@ -46,7 +44,7 @@ class HomeController extends Controller
         $jenis_obats = DB::table('jenis_obat')->get();
 
         $obats = DB::table('obat')
-                ->orderBy('nama_obat', 'asc')
+                ->orderBy('name', 'asc')
                 ->paginate(24);
         
         return view('obat', compact('obats', 'jenis_obats'));
