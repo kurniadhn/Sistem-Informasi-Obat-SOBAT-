@@ -11,7 +11,7 @@
  Target Server Version : 100422
  File Encoding         : 65001
 
- Date: 17/05/2022 06:02:17
+ Date: 30/05/2022 21:48:19
 */
 
 SET NAMES utf8mb4;
@@ -22,22 +22,33 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `artikel`;
 CREATE TABLE `artikel`  (
-  `id_artikel` int(255) NOT NULL AUTO_INCREMENT,
-  `judul_artikel` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `tanggal` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `deskripsi` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `gambar` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `link` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  PRIMARY KEY (`id_artikel`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `date` date NOT NULL,
+  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of artikel
 -- ----------------------------
-INSERT INTO `artikel` VALUES (1, 'Penelitian Klaim Obat Ini Hentikan Pertumbuhan Tumor dan Tidurkan Sel Kanker', '14/05/2022', 'Sebuah pendekatan terapeutik baru diklaim bisa mencegah pertumbuhan tumor metastatik pada tikus. Obat itu juga membuat sel kanker ada dalam keadaan tidak aktif sehingga tidak dapat berkembang biak.', 'obat-pereda-sakit-dapat-meningkatkan-risiko-pendarahan-ilustrasi_211027222136-206.jpg', 'https://www.republika.co.id/berita/rbtnc9463/penelitian-klaim-obat-ini-hentikan-pertumbuhan-tumor-dan-tidurkan-sel-kanker');
-INSERT INTO `artikel` VALUES (2, 'Tak Banyak yang Tahu, 6 Penyakit Kronis Ini Bisa Dideteksi dari Mata', '23/04/2022', 'Melakukan pemeriksaan rutin bukan hanya untuk mengetahui kondisi kesehatan mata, tapi juga seluruh bagian tubuh. Mata bisa menjadi jendela untuk melihat gangguan yang terjadi pada pembuluh darah, saraf, dan jaringan ikat di seluruh tubuh.', 'mata-merah-keratokonjungtivitis-20211130031716.jpg', 'https://health.grid.id/read/353242872/tak-banyak-yang-tahu-6-penyakit-kronis-ini-bisa-dideteksi-dari-mata?page=all');
-INSERT INTO `artikel` VALUES (3, 'Hati-hati, Makan Terlalu Cepat Bisa Menggangu Sistem Pencernaan', '12/05/2022', 'Sistem pencernaan memiliki peran besar dalam tubuh, mulai dari mencerna makanan menjadi nutrisi dan energi bagi tubuh, dan bertanggung jawab untuk memisahkan dan membuang sisa makanan yang tidak bisa dicerna oleh tubuh.', '19517-ilustrasi-makan-bersamapexelsfauxels.jpg', 'https://www.suara.com/health/2022/05/12/061815/hati-hati-makan-terlalu-cepat-bisa-menggangu-sistem-pencernaan');
-INSERT INTO `artikel` VALUES (4, '10 Jenis Penyakit Mata yang Umum Terjadi dan Cara Mengatasinya, Jangan Asal Diobati', '22/07/2021', 'Jenis penyakit mata yang umum terjadi perlu untuk diketahui agar bisa mengobati sesuai dengan keluhan sakitnya. Mata merupakan salah satu panca indera yang membantu untuk melihat. Tentu saja mata menjadi salah satu bagian tubuh yang penting bagi kehidupan', '018635600_1505377379-All_About_Vision.jpg', 'https://hot.liputan6.com/read/4613184/10-jenis-penyakit-mata-yang-umum-terjadi-dan-cara-mengatasinya-jangan-asal-diobati');
+INSERT INTO `artikel` VALUES (1, 'Penelitian Klaim Obat Ini Hentikan Pertumbuhan Tumor dan Tidurkan Sel Kanker', '0000-00-00', 'Sebuah pendekatan terapeutik baru diklaim bisa mencegah pertumbuhan tumor metastatik pada tikus. Obat itu juga membuat sel kanker ada dalam keadaan tidak aktif sehingga tidak dapat berkembang biak.', 'obat-pereda-sakit-dapat-meningkatkan-risiko-pendarahan-ilustrasi_211027222136-206.jpg', 'https://www.republika.co.id/berita/rbtnc9463/penelitian-klaim-obat-ini-hentikan-pertumbuhan-tumor-dan-tidurkan-sel-kanker');
+INSERT INTO `artikel` VALUES (2, 'Tak Banyak yang Tahu, 6 Penyakit Kronis Ini Bisa Dideteksi dari Mata', '0000-00-00', 'Melakukan pemeriksaan rutin bukan hanya untuk mengetahui kondisi kesehatan mata, tapi juga seluruh bagian tubuh. Mata bisa menjadi jendela untuk melihat gangguan yang terjadi pada pembuluh darah, saraf, dan jaringan ikat di seluruh tubuh.', 'mata-merah-keratokonjungtivitis-20211130031716.jpg', 'https://health.grid.id/read/353242872/tak-banyak-yang-tahu-6-penyakit-kronis-ini-bisa-dideteksi-dari-mata?page=all');
+INSERT INTO `artikel` VALUES (3, 'Hati-hati, Makan Terlalu Cepat Bisa Menggangu Sistem Pencernaan', '0000-00-00', 'Sistem pencernaan memiliki peran besar dalam tubuh, mulai dari mencerna makanan menjadi nutrisi dan energi bagi tubuh, dan bertanggung jawab untuk memisahkan dan membuang sisa makanan yang tidak bisa dicerna oleh tubuh.', '19517-ilustrasi-makan-bersamapexelsfauxels.jpg', 'https://www.suara.com/health/2022/05/12/061815/hati-hati-makan-terlalu-cepat-bisa-menggangu-sistem-pencernaan');
+INSERT INTO `artikel` VALUES (4, '10 Jenis Penyakit Mata yang Umum Terjadi dan Cara Mengatasinya, Jangan Asal Diobati', '0000-00-00', 'Jenis penyakit mata yang umum terjadi perlu untuk diketahui agar bisa mengobati sesuai dengan keluhan sakitnya. Mata merupakan salah satu panca indera yang membantu untuk melihat. Tentu saja mata menjadi salah satu bagian tubuh yang penting bagi kehidupan', '018635600_1505377379-All_About_Vision.jpg', 'https://hot.liputan6.com/read/4613184/10-jenis-penyakit-mata-yang-umum-terjadi-dan-cara-mengatasinya-jangan-asal-diobati');
+
+-- ----------------------------
+-- Table structure for contact
+-- ----------------------------
+DROP TABLE IF EXISTS `contact`;
+CREATE TABLE `contact`  (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `setting` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Table structure for failed_jobs
@@ -60,10 +71,10 @@ CREATE TABLE `failed_jobs`  (
 -- ----------------------------
 DROP TABLE IF EXISTS `jenis_obat`;
 CREATE TABLE `jenis_obat`  (
-  `id_jenis` int(2) NOT NULL AUTO_INCREMENT,
-  `jenis_obat` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
+  `id_jenis` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   PRIMARY KEY (`id_jenis`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of jenis_obat
@@ -88,7 +99,7 @@ CREATE TABLE `migrations`  (
   `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of migrations
@@ -97,20 +108,25 @@ INSERT INTO `migrations` VALUES (1, '2014_10_12_000000_create_users_table', 1);
 INSERT INTO `migrations` VALUES (2, '2014_10_12_100000_create_password_resets_table', 1);
 INSERT INTO `migrations` VALUES (3, '2019_08_19_000000_create_failed_jobs_table', 1);
 INSERT INTO `migrations` VALUES (4, '2019_12_14_000001_create_personal_access_tokens_table', 1);
+INSERT INTO `migrations` VALUES (5, '2022_05_23_091402_create_artikel_table', 1);
+INSERT INTO `migrations` VALUES (6, '2022_05_23_092723_create_jenis_obat_table', 1);
+INSERT INTO `migrations` VALUES (7, '2022_05_23_092736_create_obat_table', 1);
+INSERT INTO `migrations` VALUES (8, '2022_05_23_102156_create_setting_table', 1);
+INSERT INTO `migrations` VALUES (9, '2022_05_23_103820_create_contact_table', 1);
 
 -- ----------------------------
 -- Table structure for obat
 -- ----------------------------
 DROP TABLE IF EXISTS `obat`;
 CREATE TABLE `obat`  (
-  `id_obat` int(4) NOT NULL AUTO_INCREMENT,
-  `nama_obat` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `satuan` enum('Botol','Box','Kapsul','Pack','Piece','Pot','Sachet','Strip','Suppositoria','Tablet','Test Kit','Tube','Unit') CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `harga` varchar(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `gambar` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL,
-  `id_jenis` int(2) NULL DEFAULT NULL,
-  PRIMARY KEY (`id_obat`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 236 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `unit` enum('Botol','Box','Pack','Piece','Pot','Sachet','Strip','Suppositoria','Tablet','Test Kit','Tube','Unit') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `price` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_jenis` int(11) NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 237 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of obat
@@ -184,7 +200,7 @@ INSERT INTO `obat` VALUES (66, 'Bodrexin pilek dan alergi Pe Sirup 56 ml', 'Boto
 INSERT INTO `obat` VALUES (67, 'Decolsin Sirup 60 ml', 'Botol', '21.000', 'Decolsin Sirup 60 ml.jpg', 3);
 INSERT INTO `obat` VALUES (68, 'Nasonex  Nasal spray 60ml', 'Botol', '290.500', 'Nasonex  Nasal spray 60 dosis per botol.jpg', 3);
 INSERT INTO `obat` VALUES (69, 'Termorex Plus Sirup 60 ml', 'Botol', '18.500', 'Termorex Plus Sirup 60 ml.jpg', 3);
-INSERT INTO `obat` VALUES (70, 'Woods Herbal Cough Medicine + Honey 60 ml', 'Botol', '22.000', 'Woods Herbal Cough Medicine + Honey 60 ml.jpg', 3);
+INSERT INTO `obat` VALUES (70, 'Woods Herbal Cough Medicine + Honey 60 ml', 'Botol', '22.000', 'Woods Herbal Cough Medicine Honey 60 ml.jpg', 3);
 INSERT INTO `obat` VALUES (71, 'Konidin 4 tablet', 'Strip', '2.500', 'Konidin 4 tablet.jpg', 3);
 INSERT INTO `obat` VALUES (72, 'Inza 4 tablet', 'Strip', '3.500', 'Inza 4 tablet.jpg', 3);
 INSERT INTO `obat` VALUES (73, 'Komix Herbal 15 ml', 'Pack', '10.000', 'Komix Herbal 15 ml 4 botol.jpg', 3);
@@ -346,7 +362,7 @@ INSERT INTO `obat` VALUES (228, 'Amplodipine 10mg 10 table', 'Strip', '15.000', 
 INSERT INTO `obat` VALUES (229, 'Propranolol 10 mg 10 tablet', 'Strip', '2.500', 'Propranolol 10 mg 10 tablet per strip.jpg', 10);
 INSERT INTO `obat` VALUES (230, 'Captopril 12,5mg 10 tablet', 'Strip', '3.000', 'Captopril 12,5mg 10 tablet per strip.webp', 10);
 INSERT INTO `obat` VALUES (231, 'Captopril 50mg 10 tablet ', 'Strip', '5.000', 'Captopril 50mg 10 tablet per strip.webp', 10);
-INSERT INTO `obat` VALUES (232, 'Divask 5 mg 10 tablet', 'Strip', '65.000', NULL, 10);
+INSERT INTO `obat` VALUES (232, 'Divask 5 mg 10 tablet', 'Strip', '65.000', 'Divask 5 mg 10 tablet per strip.jpg', 10);
 INSERT INTO `obat` VALUES (233, 'Hytroz 2 mg 10 tablet', 'Strip', '77.000', 'Hytroz 2 mg 10 tablet per strip.jpg', 10);
 INSERT INTO `obat` VALUES (234, 'Noperten 10 mg 6 tablet', 'Strip', '24.000', 'Noperten 10 mg 6 tablet per strip.jpg', 10);
 INSERT INTO `obat` VALUES (235, 'Spirola 100 mg 10 tablet', 'Strip', '50.000', 'Spirola 100 mg 10 tablet per strip.jpg', 10);
@@ -382,12 +398,26 @@ CREATE TABLE `personal_access_tokens`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Table structure for setting
+-- ----------------------------
+DROP TABLE IF EXISTS `setting`;
+CREATE TABLE `setting`  (
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `parent` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `setting` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `value` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
 -- Table structure for users
 -- ----------------------------
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users`  (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `role` enum('root','admin','user') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp(0) NULL DEFAULT NULL,
   `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -396,11 +426,13 @@ CREATE TABLE `users`  (
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `users_email_unique`(`email`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'Administrator', 'admin', NULL, '$2y$10$7NcBHi/YJ.dnfp3UU2GfJO/kIQCl2B6hFSINgAfCjnb6qXBWpnVny', NULL, '2022-05-09 17:16:36', '2022-05-09 17:16:36');
+INSERT INTO `users` VALUES (1, 'Munaji', 'admin', 'admin', NULL, '$2y$10$7NcBHi/YJ.dnfp3UU2GfJO/kIQCl2B6hFSINgAfCjnb6qXBWpnVny', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `users` VALUES (2, 'Anggun', 'user', 'user', NULL, '$2y$10$0VrTReqye2IA.nsykrW3T.stp64qb83pGBdi/tEjH07voI8RjV.yy', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `users` VALUES (3, 'Kuur', 'root', 'root', NULL, '$2y$10$5fivYPeogxLYTzR7jBBTHuZLTkTF4XFv4fzF9.t3UlMKf7K/CF77S', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 SET FOREIGN_KEY_CHECKS = 1;
