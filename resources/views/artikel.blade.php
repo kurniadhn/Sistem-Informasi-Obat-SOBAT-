@@ -43,7 +43,7 @@
                         <div class="col-lg-6 col-md-6 col-sm-6">
                             <div class="blog__item">
                                 <div class="blog__item__pic">
-                                    <img src="{{ asset('img/artikel/' . $artikel->image) }}">
+                                    <a href="{{ $artikel->url }}"  target="__blank"><img src="{{ asset('img/artikel/' . $artikel->image) }}" alt="{{ $artikel->title }}"></a>
                                 </div>
                                 <div class="blog__item__text">
                                     <ul>
@@ -51,7 +51,7 @@
                                         <!-- <li><i class="fa fa-comment-o"></i> 5</li> -->
                                     </ul>
                                     <h5><a href="{{ $artikel->url }}"  target="__blank">{{ $artikel->title }}</a></h5>
-                                    <p>{{ $artikel->description }}</p>
+                                    <p>{{ Str::limit($artikel->description, 70) }}</p>
                                     <a href="{{ $artikel->url }}"  target="__blank" class="blog__btn">READ MORE <span class="arrow_right"></span></a>
                                 </div>
                             </div>
@@ -59,12 +59,12 @@
                         @endforeach
                         <div class="col-lg-12">
                             <div class="product__pagination blog__pagination">
-                                <a href="#">1</a>
-                                <a href="#">2</a>
-                                <a href="#">3</a>
-                                <a href="#">4</a>
-                                <a href="#">5</a>
-                                <a href="#"><i class="fa fa-long-arrow-right"></i></a>
+                                <a href="javascript:void(0)"><i class="fa fa-long-arrow-left"></i></a>
+                                    @for ($i = 1; $i <=5; $i++)
+                                        <a href="{{ '/artikel?page=' . $i }}">{{ $i }}</a>
+                                    @endfor
+                                    <!-- {{ $artikels->links() }} -->
+                                <a href="javascript:void(0)"><i class="fa fa-long-arrow-right"></i></a>
                             </div>
                         </div>
                     </div>

@@ -10,12 +10,13 @@ class Obat extends Model
     use HasFactory;
 
     protected $table = 'obat';
+    protected $PrimaryKey = 'id';
 
     protected $fillable = [
-        'nama_obat',
-        'satuan',
-        'harga',
-        'gambar',
+        'name',
+        'unit',
+        'price',
+        'image',
         'id_jenis',
     ];
 }

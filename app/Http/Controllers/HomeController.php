@@ -21,7 +21,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $obats = DB::table('obat')
+                ->inRandomOrder()
+                ->paginate(12);
+                                                                                                                     
+        $artikels = DB::table('artikel')
+                ->inRandomOrder()
+                ->paginate(3);
+
+        $settings = DB::table('setting')->get();
+
+      return view('home', compact('obats', 'artikels', 'settings'));
     }
 
     public function dashboard()
@@ -52,7 +62,8 @@ class HomeController extends Controller
 
     public function artikel()
     {                                                                                                 
-        $artikels = DB::table('artikel')->get();
+        $artikels = DB::table('artikel')
+                ->paginate(4);
 
         return view('artikel', compact('artikels'));
     }

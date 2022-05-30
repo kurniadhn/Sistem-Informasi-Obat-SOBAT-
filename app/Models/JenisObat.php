@@ -5,18 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Artikel extends Model
+class JenisObat extends Model
 {
     use HasFactory;
 
-    protected $table = 'artikel';
-    protected $PrimaryKey = 'id';
+    protected $table = 'jenis_obat';
+    protected $primaryKey = 'id_jenis';
 
     protected $fillable = [
-        'title',
-        'date',
-        'description',
-        'image',
-        'url',
+        'type',
     ];
 }

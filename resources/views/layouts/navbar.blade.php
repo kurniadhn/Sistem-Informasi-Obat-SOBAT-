@@ -128,7 +128,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="header__logo">
-                        <a href="{{ route('dashboard') }}"><h2>Sobat</h2></a>
+                        <a href="{{ route('guest.dashboard') }}"><h2>Sobat</h2></a>
                     </div>
                 </div>
                 <div class="col-lg-6">

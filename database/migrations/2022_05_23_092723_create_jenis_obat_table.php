@@ -14,7 +14,7 @@ class CreateJenisObatTable extends Migration
     public function up()
     {
         Schema::create('jenis_obat', function (Blueprint $table) {
-            $table->id();
+            $table->id('id_jenis');
             $table->string('type');
         });
     }

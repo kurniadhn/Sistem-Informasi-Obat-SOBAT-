@@ -36,8 +36,8 @@ Route::get('/hash', function() {
 |
 */
 
-Route::prefix('Root')->middleware('root')->group(function () {
-    Route::get('/dashboard', [App\Http\Controllers\RootController::class, 'index'])->name('root.dashboard');
+Route::prefix('root')->middleware('root')->group(function () {
+    Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'index'])->name('root.dashboard');
 });
 
 /*
@@ -56,11 +56,29 @@ Route::prefix('Root')->middleware('root')->group(function () {
 | Here is where you can customize your application as admin.
 |
 */
-Route::prefix('Admin')->middleware('admin')->group(function () {
-    Route::get('/dashboard', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.dashboard');
+Route::prefix('admin')->middleware('admin')->group(function () {
+    Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'admin'])->name('admin.dashboard');
 
-    Route::get('/obat', [App\Http\Controllers\AdminController::class, 'obat'])->name('admin.obat');
-    Route::get('/tambah_obat', [App\Http\Controllers\AdminController::class, 'obat'])->name('admin.obat');
+    Route::get('/obat', [App\Http\Controllers\ObatController::class, 'index'])->name('admin.obat');
+    Route::get('/tambah_obat', [App\Http\Controllers\ObatController::class, 'create'])->name('obat.create');
+    Route::POST('/obat/store', [App\Http\Controllers\ObatController::class, 'store'])->name('obat.store');
+    Route::get('/edit_obat/{id}', [App\Http\Controllers\ObatController::class, 'edit'])->name('obat.edit');
+    Route::POST('/edit_obat/{id}', [App\Http\Controllers\ObatController::class, 'update'])->name('obat.update');
+    Route::get('/hapus_obat/{id}', [App\Http\Controllers\ObatController::class, 'destroy'])->name('obat.destroy');
+
+    Route::get('/jenis_obat', [App\Http\Controllers\JenisObatController::class, 'index'])->name('admin.jenisObat');
+    Route::get('/tambah_jenis_obat', [App\Http\Controllers\JenisObatController::class, 'create'])->name('jenisObat.create');
+    Route::POST('/jenis_obat/store', [App\Http\Controllers\JenisObatController::class, 'store'])->name('jenisObat.store');
+    Route::get('/edit_jenis_obat/{id}', [App\Http\Controllers\JenisObatController::class, 'edit'])->name('jenisObat.edit');
+    Route::POST('/edit_jenis_obat/{id}', [App\Http\Controllers\JenisObatController::class, 'update'])->name('jenisObat.update');
+    Route::get('/hapus_jenis_obat/{id}', [App\Http\Controllers\JenisObatController::class, 'destroy'])->name('jenisObat.destroy');
+    
+    Route::get('/artikel', [App\Http\Controllers\ArtikelController::class, 'index'])->name('admin.artikel');
+    Route::get('/tambah_artikel', [App\Http\Controllers\ArtikelController::class, 'create'])->name('artikel.create');
+    Route::POST('/artikel/store', [App\Http\Controllers\ArtikelController::class, 'store'])->name('artikel.store');
+    Route::get('/edit_artikel/{id}', [App\Http\Controllers\ArtikelController::class, 'edit'])->name('artikel.edit');
+    Route::POST('/edit_artikel/{id}', [App\Http\Controllers\ArtikelController::class, 'update'])->name('artikel.update');
+    Route::get('/hapus_artikel/{id}', [App\Http\Controllers\ArtikelController::class, 'destroy'])->name('artikel.destroy');
 
 });
 
@@ -81,9 +99,9 @@ Route::prefix('Admin')->middleware('admin')->group(function () {
 |
 */
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'dashboard']);
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('guest.dashboard');
-Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'dashboard'])->name('dashboard');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('guest.dashboard');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('user.dashboard');
+//Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('user.dashboard');
 Route::get('/obat', [App\Http\Controllers\HomeController::class, 'obat'])->name('obat');
 Route::get('/artikel', [App\Http\Controllers\HomeController::class, 'artikel'])->name('artikel');
 Route::get('/detail_artikel/', [App\Http\Controllers\HomeController::class, 'detail_artikel'])->name('detail_artikel');
