@@ -21,6 +21,8 @@ class CheckRole
             return $next($request);
         } elseif (Auth::user()->role == 'admin'){
             return $next($request);
+        } elseif (Auth::user()->role == 'user'){
+            return $next($request);
         } else {
             return redirect()->route('error');
         }

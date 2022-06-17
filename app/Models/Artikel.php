@@ -10,7 +10,7 @@ class Artikel extends Model
     use HasFactory;
 
     protected $table = 'artikel';
-    protected $PrimaryKey = 'id';
+    protected $primaryKey = 'id_artikel';
 
     protected $fillable = [
         'title',

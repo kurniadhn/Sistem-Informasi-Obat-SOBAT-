@@ -92,6 +92,39 @@ Route::prefix('admin')->middleware('admin')->group(function () {
 
 /*
 |--------------------------------------------------------------------------
+| user
+|--------------------------------------------------------------------------
+|
+| Here is where you can customize your application as user.
+|
+*/
+Route::prefix('user')->middleware('user')->group(function () {
+    Route::get('/dashboard', [App\Http\Controllers\DashboardController::class, 'user'])->name('user.dashboard');
+
+    Route::get('/edit_profile/', [App\Http\Controllers\UserController::class, 'profile'])->name('user.profile');
+    Route::POST('/edit_profile/', [App\Http\Controllers\UserController::class, 'updateProfile'])->name('user.updateProfile');
+    Route::get('/edit_password/', [App\Http\Controllers\UserController::class, 'password'])->name('user.password');
+    Route::POST('/edit_password/', [App\Http\Controllers\UserController::class, 'updatePassword'])->name('user.updatePassword');
+
+    Route::get('/transaksi', [App\Http\Controllers\TransaksiController::class, 'index'])->name('user.transaksi.index');
+    // Route::get('/tambah_transaksi', [App\Http\Controllers\TransaksiController::class, 'create'])->name('user.transaksi.create');
+    Route::POST('/transaksi/store', [App\Http\Controllers\TransaksiController::class, 'store'])->name('user.transaksi.store');
+    Route::get('/edit_transaksi/{id}', [App\Http\Controllers\TransaksiController::class, 'edit'])->name('user.transaksi.edit');
+    Route::get('/edit_transaksi/{id}', [App\Http\Controllers\TransaksiController::class, 'update'])->name('user.transaksi.update');
+    Route::get('/hapus_transaksi/{id}', [App\Http\Controllers\TransaksiController::class, 'destroy'])->name('user.transaksi.destroy');
+
+});
+
+/*
+|--------------------------------------------------------------------------
+| End User
+|--------------------------------------------------------------------------
+*/
+
+
+
+/*
+|--------------------------------------------------------------------------
 | Guest
 |--------------------------------------------------------------------------
 |
@@ -100,14 +133,15 @@ Route::prefix('admin')->middleware('admin')->group(function () {
 */
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('guest.dashboard');
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('user.dashboard');
-//Route::get('/dashboard', [App\Http\Controllers\HomeController::class, 'index'])->name('user.dashboard');
+Route::get('/paket', [App\Http\Controllers\HomeController::class, 'paket'])->name('paket');
 Route::get('/obat', [App\Http\Controllers\HomeController::class, 'obat'])->name('obat');
+Route::get('/jenis_obat/{id}', [App\Http\Controllers\HomeController::class, 'jenis_obat'])->name('jenis_obat');
 Route::get('/artikel', [App\Http\Controllers\HomeController::class, 'artikel'])->name('artikel');
 Route::get('/detail_artikel/', [App\Http\Controllers\HomeController::class, 'detail_artikel'])->name('detail_artikel');
 Route::get('/detail_obat/', [App\Http\Controllers\HomeController::class, 'detail_obat'])->name('detail_obat');
 Route::get('/keranjang', [App\Http\Controllers\HomeController::class, 'keranjang'])->name('keranjang');
-Route::get('/checkout', [App\Http\Controllers\HomeController::class, 'checkout'])->name('checkout');
+Route::get('/checkout_paket/{id}', [App\Http\Controllers\TransaksiController::class, 'checkout_paket'])->name('checkout_paket');
+Route::get('/checkout_obat/{id}', [App\Http\Controllers\TransaksiController::class, 'checkout_obat'])->name('checkout_obat');
 
 /*
 |--------------------------------------------------------------------------

@@ -30,7 +30,7 @@
                             <ul>
                                 @foreach($jenis_obats as $jenis_obat)
                                     <li>
-                                        <a href="javascript:void(0)">{{ $jenis_obat->type }}</a>
+                                        <a href="{{ route('jenis_obat', $jenis_obat->id_jenis) }}">{{ $jenis_obat->type }}</a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -74,11 +74,11 @@
                             <div class="product__item">
                                 <div class="product__item__pic set-bg" data-setbg="{{ asset('img/obat/' . $gambar) }}">
                                     <ul class="product__item__pic__hover">
-                                        <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                        <li><a href="{{ route('checkout_obat', $obat->id_obat) }}"><i class="fa fa-shopping-cart"></i></a></li>
                                     </ul>
                                 </div>
                                 <div class="product__item__text">
-                                    <h6><a href="#">{{ $obat->name }}</a></h6>
+                                    <h6><a href="#">{{ $obat->obat }}</a></h6>
                                     <h5>Rp {{ $obat->price }}</h5>
                                 </div>
                             </div>

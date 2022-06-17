@@ -11,7 +11,7 @@
  Target Server Version : 100422
  File Encoding         : 65001
 
- Date: 30/05/2022 21:48:19
+ Date: 17/06/2022 07:48:14
 */
 
 SET NAMES utf8mb4;
@@ -22,22 +22,22 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `artikel`;
 CREATE TABLE `artikel`  (
-  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `date` date NOT NULL,
-  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE
+  `id_artikel` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `date` date NULL DEFAULT NULL,
+  `description` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `url` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id_artikel`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of artikel
 -- ----------------------------
-INSERT INTO `artikel` VALUES (1, 'Penelitian Klaim Obat Ini Hentikan Pertumbuhan Tumor dan Tidurkan Sel Kanker', '0000-00-00', 'Sebuah pendekatan terapeutik baru diklaim bisa mencegah pertumbuhan tumor metastatik pada tikus. Obat itu juga membuat sel kanker ada dalam keadaan tidak aktif sehingga tidak dapat berkembang biak.', 'obat-pereda-sakit-dapat-meningkatkan-risiko-pendarahan-ilustrasi_211027222136-206.jpg', 'https://www.republika.co.id/berita/rbtnc9463/penelitian-klaim-obat-ini-hentikan-pertumbuhan-tumor-dan-tidurkan-sel-kanker');
-INSERT INTO `artikel` VALUES (2, 'Tak Banyak yang Tahu, 6 Penyakit Kronis Ini Bisa Dideteksi dari Mata', '0000-00-00', 'Melakukan pemeriksaan rutin bukan hanya untuk mengetahui kondisi kesehatan mata, tapi juga seluruh bagian tubuh. Mata bisa menjadi jendela untuk melihat gangguan yang terjadi pada pembuluh darah, saraf, dan jaringan ikat di seluruh tubuh.', 'mata-merah-keratokonjungtivitis-20211130031716.jpg', 'https://health.grid.id/read/353242872/tak-banyak-yang-tahu-6-penyakit-kronis-ini-bisa-dideteksi-dari-mata?page=all');
-INSERT INTO `artikel` VALUES (3, 'Hati-hati, Makan Terlalu Cepat Bisa Menggangu Sistem Pencernaan', '0000-00-00', 'Sistem pencernaan memiliki peran besar dalam tubuh, mulai dari mencerna makanan menjadi nutrisi dan energi bagi tubuh, dan bertanggung jawab untuk memisahkan dan membuang sisa makanan yang tidak bisa dicerna oleh tubuh.', '19517-ilustrasi-makan-bersamapexelsfauxels.jpg', 'https://www.suara.com/health/2022/05/12/061815/hati-hati-makan-terlalu-cepat-bisa-menggangu-sistem-pencernaan');
-INSERT INTO `artikel` VALUES (4, '10 Jenis Penyakit Mata yang Umum Terjadi dan Cara Mengatasinya, Jangan Asal Diobati', '0000-00-00', 'Jenis penyakit mata yang umum terjadi perlu untuk diketahui agar bisa mengobati sesuai dengan keluhan sakitnya. Mata merupakan salah satu panca indera yang membantu untuk melihat. Tentu saja mata menjadi salah satu bagian tubuh yang penting bagi kehidupan', '018635600_1505377379-All_About_Vision.jpg', 'https://hot.liputan6.com/read/4613184/10-jenis-penyakit-mata-yang-umum-terjadi-dan-cara-mengatasinya-jangan-asal-diobati');
+INSERT INTO `artikel` VALUES (1, 'Penelitian Klaim Obat Ini Hentikan Pertumbuhan Tumor dan Tidurkan Sel Kanker', '2022-06-16', 'Sebuah pendekatan terapeutik baru diklaim bisa mencegah pertumbuhan tumor metastatik pada tikus. Obat itu juga membuat sel kanker ada dalam keadaan tidak aktif sehingga tidak dapat berkembang biak.', 'obat-pereda-sakit-dapat-meningkatkan-risiko-pendarahan-ilustrasi_211027222136-206.jpg', 'https://www.republika.co.id/berita/rbtnc9463/penelitian-klaim-obat-ini-hentikan-pertumbuhan-tumor-dan-tidurkan-sel-kanker');
+INSERT INTO `artikel` VALUES (2, 'Tak Banyak yang Tahu, 6 Penyakit Kronis Ini Bisa Dideteksi dari Mata', '2022-06-16', 'Melakukan pemeriksaan rutin bukan hanya untuk mengetahui kondisi kesehatan mata, tapi juga seluruh bagian tubuh. Mata bisa menjadi jendela untuk melihat gangguan yang terjadi pada pembuluh darah, saraf, dan jaringan ikat di seluruh tubuh.', 'mata-merah-keratokonjungtivitis-20211130031716.jpg', 'https://health.grid.id/read/353242872/tak-banyak-yang-tahu-6-penyakit-kronis-ini-bisa-dideteksi-dari-mata?page=all');
+INSERT INTO `artikel` VALUES (3, 'Hati-hati, Makan Terlalu Cepat Bisa Menggangu Sistem Pencernaan', '2022-06-16', 'Sistem pencernaan memiliki peran besar dalam tubuh, mulai dari mencerna makanan menjadi nutrisi dan energi bagi tubuh, dan bertanggung jawab untuk memisahkan dan membuang sisa makanan yang tidak bisa dicerna oleh tubuh.', '19517-ilustrasi-makan-bersamapexelsfauxels.jpg', 'https://www.suara.com/health/2022/05/12/061815/hati-hati-makan-terlalu-cepat-bisa-menggangu-sistem-pencernaan');
+INSERT INTO `artikel` VALUES (4, '10 Jenis Penyakit Mata yang Umum Terjadi dan Cara Mengatasinya, Jangan Asal Diobati', '2022-06-16', 'Jenis penyakit mata yang umum terjadi perlu untuk diketahui agar bisa mengobati sesuai dengan keluhan sakitnya. Mata merupakan salah satu panca indera yang membantu untuk melihat. Tentu saja mata menjadi salah satu bagian tubuh yang penting bagi kehidupan', '018635600_1505377379-All_About_Vision.jpg', 'https://hot.liputan6.com/read/4613184/10-jenis-penyakit-mata-yang-umum-terjadi-dan-cara-mengatasinya-jangan-asal-diobati');
 
 -- ----------------------------
 -- Table structure for contact
@@ -67,12 +67,37 @@ CREATE TABLE `failed_jobs`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Table structure for image
+-- ----------------------------
+DROP TABLE IF EXISTS `image`;
+CREATE TABLE `image`  (
+  `id_image` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `id_paket` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id_image`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of image
+-- ----------------------------
+INSERT INTO `image` VALUES (1, 'Alkes Pencegahan COVID-19 Paket1.jpg', '1');
+INSERT INTO `image` VALUES (2, 'Alkes Pencegahan COVID-19 Paket2.jpg', '2');
+INSERT INTO `image` VALUES (3, 'P3K Luka Robek Paket1.jpg', '3');
+INSERT INTO `image` VALUES (4, 'P3K Luka Robek Paket2.jpg', '4');
+INSERT INTO `image` VALUES (5, 'Paket Batuk 1.png', '5');
+INSERT INTO `image` VALUES (6, 'Paket Batuk 2.png', '11');
+INSERT INTO `image` VALUES (7, 'Pilek Paket1.jpg', '12');
+INSERT INTO `image` VALUES (8, 'Pilek Paket2.jpg', '13');
+INSERT INTO `image` VALUES (9, 'Saluran Pencernaan Gastroenteritis Paket1.jpg', '14');
+INSERT INTO `image` VALUES (10, 'Saluran Pencernaan Gastroenteritis Paket2.jpg', '15');
+
+-- ----------------------------
 -- Table structure for jenis_obat
 -- ----------------------------
 DROP TABLE IF EXISTS `jenis_obat`;
 CREATE TABLE `jenis_obat`  (
   `id_jenis` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `type` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   PRIMARY KEY (`id_jenis`) USING BTREE
 ) ENGINE = InnoDB AUTO_INCREMENT = 12 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
@@ -99,7 +124,7 @@ CREATE TABLE `migrations`  (
   `migration` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 14 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of migrations
@@ -113,20 +138,24 @@ INSERT INTO `migrations` VALUES (6, '2022_05_23_092723_create_jenis_obat_table',
 INSERT INTO `migrations` VALUES (7, '2022_05_23_092736_create_obat_table', 1);
 INSERT INTO `migrations` VALUES (8, '2022_05_23_102156_create_setting_table', 1);
 INSERT INTO `migrations` VALUES (9, '2022_05_23_103820_create_contact_table', 1);
+INSERT INTO `migrations` VALUES (10, '2022_06_06_144940_create_paket_obat_table', 2);
+INSERT INTO `migrations` VALUES (11, '2022_06_06_151833_create_paket_obat_detail_table', 3);
+INSERT INTO `migrations` VALUES (12, '2022_06_16_093238_create_image_table', 4);
+INSERT INTO `migrations` VALUES (13, '2022_06_16_213942_create_transaksi_table', 5);
 
 -- ----------------------------
 -- Table structure for obat
 -- ----------------------------
 DROP TABLE IF EXISTS `obat`;
 CREATE TABLE `obat`  (
-  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_obat` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `obat` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `unit` enum('Botol','Box','Pack','Piece','Pot','Sachet','Strip','Suppositoria','Tablet','Test Kit','Tube','Unit') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `id_jenis` int(11) NOT NULL,
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 237 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+  PRIMARY KEY (`id_obat`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 238 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of obat
@@ -368,6 +397,48 @@ INSERT INTO `obat` VALUES (234, 'Noperten 10 mg 6 tablet', 'Strip', '24.000', 'N
 INSERT INTO `obat` VALUES (235, 'Spirola 100 mg 10 tablet', 'Strip', '50.000', 'Spirola 100 mg 10 tablet per strip.jpg', 10);
 
 -- ----------------------------
+-- Table structure for paket_obat
+-- ----------------------------
+DROP TABLE IF EXISTS `paket_obat`;
+CREATE TABLE `paket_obat`  (
+  `id_paket` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `paket` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `price` int(10) NULL DEFAULT NULL,
+  PRIMARY KEY (`id_paket`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of paket_obat
+-- ----------------------------
+INSERT INTO `paket_obat` VALUES (1, 'Alat Kesehatan Pencegahan Covid-19 Paket 1', 35000);
+INSERT INTO `paket_obat` VALUES (2, 'Alat Kesehatan Pencegahan Covid-19 Paket 2', 105000);
+INSERT INTO `paket_obat` VALUES (3, 'P3K Luka Robek Paket 1', 14000);
+INSERT INTO `paket_obat` VALUES (4, 'P3K Luka Robek Paket 2', 22500);
+INSERT INTO `paket_obat` VALUES (5, 'Paket Batuk 1', 15500);
+INSERT INTO `paket_obat` VALUES (11, 'Paket Batuk 2', 125000);
+INSERT INTO `paket_obat` VALUES (12, 'Pilek Paket 1', 18500);
+INSERT INTO `paket_obat` VALUES (13, 'Pilek Paket 2', 59000);
+INSERT INTO `paket_obat` VALUES (14, 'Saluran Pencernaan Gastroenteritis Paket 1', 14500);
+INSERT INTO `paket_obat` VALUES (15, 'Saluran Pencernaan Gastroenteritis Paket 2', 23000);
+
+-- ----------------------------
+-- Table structure for paket_obat_detail
+-- ----------------------------
+DROP TABLE IF EXISTS `paket_obat_detail`;
+CREATE TABLE `paket_obat_detail`  (
+  `id_paket_detail` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `jenis_paket` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `id_paket` int(11) NOT NULL,
+  PRIMARY KEY (`id_paket_detail`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of paket_obat_detail
+-- ----------------------------
+INSERT INTO `paket_obat_detail` VALUES (1, 'Paket 1', 'Alkes Pencegahan COVID-19 Paket1.jpg', 1);
+
+-- ----------------------------
 -- Table structure for password_resets
 -- ----------------------------
 DROP TABLE IF EXISTS `password_resets`;
@@ -411,6 +482,29 @@ CREATE TABLE `setting`  (
 ) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
+-- Table structure for transaksi
+-- ----------------------------
+DROP TABLE IF EXISTS `transaksi`;
+CREATE TABLE `transaksi`  (
+  `id_transaksi` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `date` date NULL DEFAULT NULL,
+  `image` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `method` enum('Bank Jatim','BCA','BNI','BRI','BSI','Dana') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `total` int(10) NULL DEFAULT NULL,
+  `status` enum('success','pending') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `id_obat` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `id_paket` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `id_user` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  PRIMARY KEY (`id_transaksi`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+
+-- ----------------------------
+-- Records of transaksi
+-- ----------------------------
+INSERT INTO `transaksi` VALUES (1, '2022-06-17', '', 'Bank Jatim', 20000, 'pending', '36', NULL, '2');
+INSERT INTO `transaksi` VALUES (2, '2022-06-17', '', 'BSI', 19, 'pending', '130', NULL, '2');
+
+-- ----------------------------
 -- Table structure for users
 -- ----------------------------
 DROP TABLE IF EXISTS `users`;
@@ -418,6 +512,8 @@ CREATE TABLE `users`  (
   `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `role` enum('root','admin','user') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `address` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
+  `phone` varchar(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NULL DEFAULT NULL,
   `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `email_verified_at` timestamp(0) NULL DEFAULT NULL,
   `password` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -426,13 +522,14 @@ CREATE TABLE `users`  (
   `updated_at` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `users_email_unique`(`email`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'Munaji', 'admin', 'admin', NULL, '$2y$10$7NcBHi/YJ.dnfp3UU2GfJO/kIQCl2B6hFSINgAfCjnb6qXBWpnVny', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
-INSERT INTO `users` VALUES (2, 'Anggun', 'user', 'user', NULL, '$2y$10$0VrTReqye2IA.nsykrW3T.stp64qb83pGBdi/tEjH07voI8RjV.yy', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
-INSERT INTO `users` VALUES (3, 'Kuur', 'root', 'root', NULL, '$2y$10$5fivYPeogxLYTzR7jBBTHuZLTkTF4XFv4fzF9.t3UlMKf7K/CF77S', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `users` VALUES (1, 'Munaji', 'admin', NULL, NULL, 'admin', NULL, '$2y$10$7NcBHi/YJ.dnfp3UU2GfJO/kIQCl2B6hFSINgAfCjnb6qXBWpnVny', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `users` VALUES (2, 'Anggun P.', 'user', 'Jl. Tidar', '085156186156', 'user', NULL, '$2y$10$KfxV7F9W8o8tPsTkVz7tze97TRrZOLQk.OMD7iK4VfgIzEgWMsZwu', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `users` VALUES (3, 'Kuur', 'root', NULL, NULL, 'root', NULL, '$2y$10$5fivYPeogxLYTzR7jBBTHuZLTkTF4XFv4fzF9.t3UlMKf7K/CF77S', NULL, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+INSERT INTO `users` VALUES (4, 'Muhammad Nasrul', 'user', NULL, NULL, 'pacemugen14@gmail.com', NULL, '$2y$10$tDUX7K3FG11D5gG4Vm3KEuGcBFKcqWilzns87w17zmScxUMp2hyGG', NULL, '2022-06-06 16:37:42', '2022-06-06 16:37:42');
 
 SET FOREIGN_KEY_CHECKS = 1;

@@ -70,10 +70,10 @@
                     <td><a href="{{ asset('img/artikel/' . $artikel->image) }}" target="__blank">{{ $artikel->image }}</a></td>
                     <td><a href="{{ $artikel->url }}" target="__blank">{{ $artikel->url }}</a></td>
                     <td class="table-actions">
-                      <a href="{{ route('artikel.edit', $artikel->id) }}" class="table-action" data-toggle="tooltip" data-original-title="Edit product">
+                      <a href="{{ route('artikel.edit', $artikel->id_artikel) }}" class="table-action" data-toggle="tooltip" data-original-title="Edit product">
                         <i class="fas fa-user-edit"></i>
                       </a>
-                      <a href="{{ route('artikel.destroy', $artikel->id) }}" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete product">
+                      <a href="{{ route('artikel.destroy', $artikel->id_artikel) }}" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete product">
                         <i class="fas fa-trash"></i>
                       </a>
                     </td>

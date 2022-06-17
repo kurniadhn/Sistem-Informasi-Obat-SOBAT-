@@ -64,16 +64,16 @@
                   @foreach ($obats as $obat)
                   <tr>
                     <td>{{ $no++ }}</td>
-                    <td>{{ $obat->name }}</td>
+                    <td>{{ $obat->obat }}</td>
                     <td>{{ $obat->unit }}</td>
                     <td>{{ $obat->price }}</td>
                     <td>{{ $obat->type }}</td>
                     <td><a href="{{ asset('img/obat/' . $obat->image) }}" target="__blank">{{ $obat->image }}</a></td>
                     <td class="table-actions">
-                      <a href="{{ route('obat.edit', $obat->id) }}" class="table-action" data-toggle="tooltip" data-original-title="Edit product">
+                      <a href="{{ route('obat.edit', $obat->id_obat) }}" class="table-action" data-toggle="tooltip" data-original-title="Edit product">
                         <i class="fas fa-user-edit"></i>
                       </a>
-                      <a href="{{ route('obat.destroy', $obat->id) }}" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete product">
+                      <a href="{{ route('obat.destroy', $obat->id_obat) }}" class="table-action table-action-delete" data-toggle="tooltip" data-original-title="Delete product">
                         <i class="fas fa-trash"></i>
                       </a>
                     </td>

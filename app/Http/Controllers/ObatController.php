@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Obat;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class ObatController extends Controller
 {
@@ -60,7 +61,7 @@ class ObatController extends Controller
         $file->move(public_path('img/obat'), $image);
 
         DB::table('obat')->insert([
-          'name' => $request->name,
+          'obat' => $request->name,
           'unit' => $request->unit,
           'price' => $request->price,
           'image' => $image,
@@ -116,8 +117,8 @@ class ObatController extends Controller
             $image = $oldImage;
         }
 
-        DB::table('obat')->where('id', $request->id)->update([
-          'name' => $request->name,
+        DB::table('obat')->where('id_obat', $request->id)->update([
+          'obat' => $request->name,
           'unit' => $request->unit,
           'price' => $request->price,
           'image' => $image,
@@ -137,7 +138,7 @@ class ObatController extends Controller
     {
         $obat = Obat::find($id);
         $image = $obat->image;
-        Obat::where('id', $id)->delete();
+        Obat::where('id_obat', $id)->delete();
         unlink("img/obat/" . $image);
 
         return redirect()->route('admin.obat')->with('error', 'Obat Berhasil Dihapus!'); 

@@ -37,18 +37,18 @@
               </div>
               <!-- Card body -->
               <div class="card-body">
-                <form method="POST" action="{{ route('obat.update', $obat->id) }}" enctype="multipart/form-data">
+                <form method="POST" action="{{ route('obat.update', $obat->id_obat) }}" enctype="multipart/form-data">
                   @csrf
 
                   <div>
-                      <input type="hidden" name="id" value="{{ $obat->id }}">  
+                      <input type="hidden" name="id" value="{{ $obat->id_obat }}">  
                       <input type="hidden" name="oldImage" value="{{ $obat->image }}">  
                   </div>
 
                   <div class="form-group row">
                     <label for="example-text-input" class="col-md-2 col-form-label form-control-label">Nama Obat</label>
                     <div class="col-md-10">
-                      <input class="form-control" type="text"value="{{ $obat->name }}" name="name">
+                      <input class="form-control" type="text"value="{{ $obat->obat }}" name="name">
                     </div>
                   </div>
                   <div class="form-group row">

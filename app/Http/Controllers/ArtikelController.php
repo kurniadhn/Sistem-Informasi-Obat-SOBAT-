@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Artikel;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class ArtikelController extends Controller
 {
@@ -111,7 +112,7 @@ class ArtikelController extends Controller
         }
 
         //dd($request);
-        DB::table('artikel')->where('id', $request->id)->update([
+        DB::table('artikel')->where('id_kegiatan', $request->id)->update([
           'title' => $request->title,
           'date' => $request->date,
           'description' => $request->description,
@@ -132,7 +133,7 @@ class ArtikelController extends Controller
     {
         $artikel = Artikel::find($id);
         $image = $artikel->image;
-        Artikel::where('id', $id)->delete();
+        Artikel::where('id_kegiatan', $id)->delete();
         unlink("img/artikel/" . $image);
 
         return redirect()->route('admin.artikel')->with('error', 'Artikel Berhasil Dihapus!'); 

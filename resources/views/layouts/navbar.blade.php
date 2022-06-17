@@ -93,31 +93,11 @@
                                 </ul>
                             </div> -->
                             <div class="header__top__right__auth">
-                            <!-- Authentication Links -->
-                            @guest
-                                @if (Route::has('login'))
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="{{ route('login') }}" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                            Login
-                                    </a>
+                                @if (Auth::check() == 'true')
+                                    <a href="{{ route('user.dashboard') }}"><i class="fa fa-user"></i> Dashboard</a>
+                                @else
+                                    <a href="{{ route('login') }}"><i class="fa fa-user"></i> Login</a>
                                 @endif
-                            @else
-                                    <a id="navbarDropdown" class="nav-link dropdown-toggle" href="javascript:void(0)" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                        {{ Auth::user()->name }}
-                                    </a>
-
-                                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{{ route('logout') }}"
-                                        onclick="event.preventDefault();
-                                                        document.getElementById('logout-form').submit();">
-                                            {{ __('Logout') }}
-                                        </a>
-
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                            @csrf
-                                        </form>
-                                    </div>
-                                </li>
-                            @endguest
                             </div>
                         </div>
                     </div>
@@ -135,6 +115,7 @@
                     <nav class="header__menu">
                         <ul>
                             <li class="{{ Route::is('dashboard') ? 'active' : '' }}"><a href="{{ '/' }}">Beranda</a></li>
+                            <li class="{{ Route::is('paket') ? 'active' : '' }}"><a href="{{ '/paket' }}">Paket</a></li>
                             <li class="{{ Route::is('obat') ? 'active' : '' }}"><a href="{{ '/obat' }}">Obat</a></li>
                             <!-- <li><a href="#">Pages</a>
                                 <ul class="header__menu__dropdown">
@@ -152,7 +133,7 @@
                     <div class="header__cart">
                         <ul>
                             <!-- <li><a href="#"><i class="fa fa-heart"></i> <span>1</span></a></li> -->
-                            <li><a href="{{ '/keranjang' }}"><i class="fa fa-shopping-bag"></i><span>3</span></a></li>
+                            <!-- <li><a href="{{ '/keranjang' }}"><i class="fa fa-shopping-bag"></i><span>3</span></a></li> -->
                         </ul>
                         <!-- <div class="header__cart__price">item: <span>$150.00</span></div> -->
                     </div>

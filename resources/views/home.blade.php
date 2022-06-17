@@ -22,7 +22,7 @@
                     </div>
                 </div> -->
                 <div class="col-lg-12">
-                    <div class="hero__item set-bg" data-setbg="{{ asset('frontend/img/hero/banner.jpg') }}">
+                    <div class="hero__item set-bg" data-setbg="{{ asset('frontend/img/hero/banner3.jpg') }}">
                         <div class="hero__text">
                             <span>SOBAT</span>
                             <h2>Pesan Obat <br />Lebih Mudah</h2>
@@ -45,31 +45,52 @@
                 </div>
                 <div class="row">
                     <div class="categories__slider owl-carousel">
+
+                        @foreach ($alat_kesehatans as $alat_kesehatan)
+                        <?php $image = str_replace(' ', '%20', $alat_kesehatan->image); ?>
                         <div class="col-lg-3">
-                            <div class="categories__item set-bg" data-setbg="{{ asset('frontend/img/categories/cat-1.jpg') }}">
-                                <h5><a href="#">Batuk & Flu</a></h5>
+                            <div class="categories__item set-bg" data-setbg="{{ asset('img/paket/' . $image) }}">
+                                <h5><a href="{{ route('paket') }}">Alat Kesehatan</a></h5>
                             </div>
                         </div>
+                        @endforeach
+
+                        @foreach ($p3ks as $p3k)
+                        <?php $image = str_replace(' ', '%20', $p3k->image); ?>
                         <div class="col-lg-3">
-                            <div class="categories__item set-bg" data-setbg="{{ asset('frontend/img/categories/cat-2.jpg') }}">
-                                <h5><a href="#">P3K</a></h5>
+                            <div class="categories__item set-bg" data-setbg="{{ asset('img/paket/' . $image) }}">
+                                <h5><a href="{{ route('paket') }}">P3K</a></h5>
                             </div>
                         </div>
+                        @endforeach
+
+                        @foreach ($batuks as $batuk)
+                        <?php $image = str_replace(' ', '%20', $batuk->image); ?>
                         <div class="col-lg-3">
-                            <div class="categories__item set-bg" data-setbg="{{ asset('frontend/img/categories/cat-3.jpg') }}">
-                                <h5><a href="#">Saluran Pencernaan</a></h5>
+                            <div class="categories__item set-bg" data-setbg="{{ asset('img/paket/' . $image) }}">
+                                <h5><a href="{{ route('paket') }}">Batuk</a></h5>
                             </div>
                         </div>
+                        @endforeach
+
+                        @foreach ($pileks as $pilek)
+                        <?php $image = str_replace(' ', '%20', $pilek->image); ?>
                         <div class="col-lg-3">
-                            <div class="categories__item set-bg" data-setbg="{{ asset('frontend/img/categories/cat-4.jpg') }}">
-                                <h5><a href="#">Paracetamol</a></h5>
+                            <div class="categories__item set-bg" data-setbg="{{ asset('img/paket/' . $image) }}">
+                                <h5><a href="{{ route('paket') }}">Pilek</a></h5>
                             </div>
                         </div>
+                        @endforeach
+
+                        @foreach ($pencernaans as $pencernaan)
+                        <?php $image = str_replace(' ', '%20', $pencernaan->image); ?>
                         <div class="col-lg-3">
-                            <div class="categories__item set-bg" data-setbg="{{ asset('frontend/img/categories/cat-5.jpg') }}">
-                                <h5><a href="#">Lainnya</a></h5>
+                            <div class="categories__item set-bg" data-setbg="{{ asset('img/paket/' . $image) }}">
+                                <h5><a href="{{ route('paket') }}">Pencernaan</a></h5>
                             </div>
                         </div>
+                        @endforeach
+
                     </div>
                 </div>
             </div>
@@ -89,18 +110,18 @@
             </div>
             <div class="row featured__filter">
 			    @foreach ($obats as $obat)
-                <?php $gambar = str_replace(' ', '%20', $obat->image); ?>
+                <?php $image = str_replace(' ', '%20', $obat->image); ?>
                 <div class="col-lg-3 col-md-4 col-sm-6 mix oranges fresh-meat">
                     <div class="featured__item">
-                        <div class="featured__item__pic set-bg" data-setbg="{{ asset('img/obat/' . $gambar) }}">
+                        <div class="featured__item__pic set-bg" data-setbg="{{ asset('img/obat/' . $image) }}">
                             <ul class="featured__item__pic__hover">
                                 <!-- <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li> -->
-                                <li><a href="javascript:void(0)"><i class="fa fa-shopping-cart"></i></a></li>
+                                <li><a href="{{ route('checkout_obat', $obat->id_obat) }}"><i class="fa fa-shopping-cart"></i></a></li>
                             </ul>
                         </div>
                         <div class="featured__item__text">
-                            <h6><a href="#">{{ $obat->name }}</a></h6>
+                            <h6><a href="#">{{ $obat->obat }}</a></h6>
                             <h5>Rp {{ $obat->price }}</h5>
                         </div>
                     </div>
